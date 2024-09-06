@@ -91,7 +91,7 @@ vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
 -- Set to true if you have a Nerd Font installed and selected in the terminal
-vim.g.have_nerd_font = false
+vim.g.have_nerd_font = true
 
 -- [[ Setting options ]]
 -- See `:help vim.opt`
@@ -105,7 +105,8 @@ vim.opt.number = true
 -- vim.opt.relativenumber = true
 
 -- Enable mouse mode, can be useful for resizing splits for example!
-vim.opt.mouse = 'a'
+-- vim.opt.mouse = 'a'
+vim.opt.mouse = ''
 
 -- Don't show the mode, since it's already in the status line
 vim.opt.showmode = false
@@ -146,7 +147,8 @@ vim.opt.splitbelow = true
 --  See `:help 'list'`
 --  and `:help 'listchars'`
 vim.opt.list = true
-vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
+-- vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
+vim.opt.listchars = { tab = '» ', trail = '·' }
 
 -- Preview substitutions live, as you type!
 vim.opt.inccommand = 'split'
@@ -156,6 +158,36 @@ vim.opt.cursorline = true
 
 -- Minimal number of screen lines to keep above and below the cursor.
 vim.opt.scrolloff = 10
+
+-- My options
+vim.g.python3_host_prog = os.getenv 'NVIM_PYTHON3_HOST'
+vim.g.node_host_prog = os.getenv 'NVIM_NODE_HOST'
+vim.opt.backup = true
+vim.opt.cmdheight = 2
+vim.opt.complete = '.,w,b,u,t,kspell'
+vim.opt.expandtab = true
+vim.opt.infercase = true
+vim.opt.linebreak = true
+vim.opt.scrollback = 20000
+vim.opt.shiftwidth = 2
+vim.opt.showmatch = true
+vim.opt.showtabline = 2
+vim.opt.smartindent = true
+vim.opt.softtabstop = 2
+vim.opt.spelloptions = 'camel'
+vim.opt.tabstop = 2
+vim.opt.textwidth = 100
+vim.opt.undodir = os.getenv 'TEMP' .. '/nvim'
+vim.opt.visualbell = true
+vim.opt.whichwrap = '<,>,h,l'
+vim.opt.wildignorecase = true
+vim.opt.wrapscan = false
+-- vim.opt.iskeyword:append '-'
+-- vim.opt.iskeyword:remove '_'
+vim.opt.nrformats:append 'alpha'
+vim.wo.number = true
+vim.wo.relativenumber = true
+vim.wo.signcolumn = 'yes'
 
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
